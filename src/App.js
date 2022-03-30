@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Greeter from './components/Greeter';
+import nameArray from './data.js'
+// import Logo from './components/Logo'
+// import Text from './components/Text'
 
+// name and age are props of object
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div className="App">
+     <h1 className="greeting">Hello React!</h1>
+    { 
+    nameArray.map(object => 
+      <Greeter name={object.name} age={object.age} />
+      )
+    }
+   </div>
   );
 }
 
